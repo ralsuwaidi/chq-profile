@@ -1,9 +1,14 @@
-import { InputItem } from "../../components/FormComponents"
+import FormPersonal from "./FormPersonal";
 
-export default function EditPage(){
-    return (
-        <div>
-            <InputItem label="log" type="email" id="email" placeholder="email@me.ae" />
-        </div>
-    )
+export default function EditPage() {
+  return (
+    <div className="md:flex">
+      <div>
+        <p>name</p>
+      </div>
+      <div>
+        <FormPersonal />
+      </div>
+    </div>
+  );
 }
