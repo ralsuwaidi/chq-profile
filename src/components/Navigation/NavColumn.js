@@ -3,7 +3,7 @@ import { ListGroup } from "flowbite-react";
 export default function NavColumns() {
   return (
     <div>
-      <div className="w-48">
+      <div className="w-36">
         <ListGroup>
           <ListGroup.Item>Profile</ListGroup.Item>
           <ListGroup.Item>Settings</ListGroup.Item>

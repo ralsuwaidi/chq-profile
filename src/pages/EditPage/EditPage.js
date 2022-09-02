@@ -9,7 +9,7 @@ export default function EditPage() {
       <NavBar />
       <PageWrapper>
         <div className="flex">
-          <div className="mr-12 mt-12">
+          <div className="mr-12 mt-5">
             <NavColumns />
           </div>
           <div className="grow">
