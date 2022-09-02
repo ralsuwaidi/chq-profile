@@ -1,4 +1,4 @@
-import { Avatar, Footer, TextInput } from "flowbite-react";
+import { Avatar, Footer, Textarea, TextInput } from "flowbite-react";
 
 export default function EditPage() {
   return (
@@ -19,11 +19,22 @@ export default function EditPage() {
       </div>
 
       <div className="mt-5">
-        <EditRow name="First name">
-          <TextInput id="firstName" type="text" required={true} />
+        <EditRow label="First name">
+          <TextInput id="firstName" type="text" placeholder="Rashed" required={true} />
         </EditRow>
-        <EditRow name="Last Name">
-          <TextInput id="lastName" type="text" required={true} />
+        <EditRow label="Last Name">
+          <TextInput id="lastName" type="text" placeholder="Suwaidi" required={true} />
+        </EditRow>
+        <EditRow label="Your Bio">
+          <Textarea
+            id="bio"
+            placeholder="Tell us about yourself"
+            required={true}
+            rows={4}
+          />
+        </EditRow>
+        <EditRow label="Github Profile">
+          <TextInput id="github" type="url" placeholder="Coders-HQ" addon="github.com/"/>
         </EditRow>
       </div>
     </div>
@@ -35,7 +46,7 @@ export function EditRow(props) {
     <div className="my-5">
       <div className="grid grid-cols-8 gap-4">
         <div className="col-start-1 col-span-2">
-          <p className="text-sm">{props.name}</p>
+          <p className="text-sm">{props.label}</p>
         </div>
         <div className="col-end-7 col-span-4">
           {props.children}

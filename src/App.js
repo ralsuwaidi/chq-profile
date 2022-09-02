@@ -4,9 +4,11 @@ import PageWrapper from "./pages/PageWrapper/PageWrapper";
 
 function App() {
   return (
+    <div className="font-sans ">
     <PageWrapper>
       <EditPage />
     </PageWrapper>
+    </div>
   );
 }
 
