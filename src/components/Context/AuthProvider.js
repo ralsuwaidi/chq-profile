@@ -23,7 +23,7 @@ export const AuthProvider = (props) => {
 
   let editUser = async (e) => {
     e.preventDefault();
-    console.log("last name ", e.target.lastName.value);
+    console.log(">> ", e.target.firstName.value);
     let response = await fetch("http://192.168.0.141:8000/api/token/", {
       method: "POST",
       headers: {

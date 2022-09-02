@@ -1,13 +1,11 @@
 import {
-    Avatar,
     Checkbox,
-    Footer,
     Label,
     Textarea,
     TextInput,
   } from "flowbite-react";
 import React from "react";
-import { EditRow } from "./EditForm";
+import EditRow from "./EditRow";
 
 export default function FormMain() {
     return (
@@ -48,7 +46,6 @@ export default function FormMain() {
             id="email"
             type="email"
             placeholder="name@codershq.ae"
-            required={true}
             helperText={
               <React.Fragment>We’ll never share your details</React.Fragment>
             }
@@ -63,7 +60,6 @@ export default function FormMain() {
             id="linkedin"
             type="text"
             placeholder="Linkedin"
-            required={true}
             addon="linkedin.com/in/"
           />
         </div>
@@ -76,7 +72,6 @@ export default function FormMain() {
             id="website"
             type="text"
             placeholder="website.com"
-            required={true}
             addon="https://"
           />
         </div>

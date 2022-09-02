@@ -1,96 +1,34 @@
-import {
-  Avatar,
-  Checkbox,
-  Footer,
-  Label,
-  Textarea,
-  TextInput,
-} from "flowbite-react";
-import React from "react";
-import FormMain from "./FormMain";
+import { Avatar, Button, TextInput } from "flowbite-react";
+import React, { useContext } from "react";
+import AuthContext from "../../components/Context/AuthProvider";
+import EditRow from "./forms/EditRow";
+import FormMain from "./forms/FormMain";
 
 export default function EditForm() {
+  const postEdit = useContext(AuthContext);
+  let { editUser } = useContext(AuthContext);
+
   return (
-    <form>
+    <form onSubmit={editUser}>
       <div className="mt-5">
-       <FormMain/>
+        <FormMain />
 
         <EditRow label="Last Name">
           <TextInput
             id="lastName"
             type="text"
             placeholder="Suwaidi"
-            required={true}
           />
         </EditRow>
 
-        <EditRow label="Your Bio">
-          <Textarea
-            id="bio"
-            placeholder="Tell us about yourself"
-            required={true}
-            rows={4}
-          />
-        </EditRow>
-        <EditRow label="Github Profile">
-          <TextInput
-            id="github"
-            type="url"
-            placeholder="Coders-HQ"
-            addon="github.com/"
-          />
-        </EditRow>
-        <EditRow label="Github Profile">
-          <TextInput
-            id="github"
-            type="url"
-            placeholder="Coders-HQ"
-            addon="github.com/"
-          />
-        </EditRow>
-        <EditRow label="Github Profile">
-          <TextInput
-            id="github"
-            type="url"
-            placeholder="Coders-HQ"
-            addon="github.com/"
-          />
-        </EditRow>
-        <EditRow label="Your Bio">
-          <Textarea
-            id="bio"
-            placeholder="Tell us about yourself"
-            required={true}
-            rows={4}
-          />
-        </EditRow>
-        <EditRow label="Github Profile">
-          <TextInput
-            id="github"
-            type="url"
-            placeholder="Coders-HQ"
-            addon="github.com/"
-          />
-        </EditRow>
+        
+        <Button type="submit">Submit</Button>
       </div>
     </form>
   );
 }
 
-export function EditRow(props) {
-  return (
-    <div className="my-5">
-      <div className={`grid grid-cols-8 gap-4  ${props.spacing}`}>
-        <div className="col-start-1 col-span-2">
-          <p className="text-xl font-semibold">{props.label}</p>
-          <p className="text-sm text-gray-500 ">{props.info}</p>
-        </div>
-        <div className="col-end-7 col-span-4 max-w-md">{props.children}</div>
-      </div>
-      <Footer.Divider />
-    </div>
-  );
-}
+
 
 export function Header(props) {
   return (
