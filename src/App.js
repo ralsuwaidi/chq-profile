@@ -1,11 +1,18 @@
 import "./App.css";
+import { AuthProvider } from "./components/Context/AuthProvider";
 import EditPage from "./pages/EditPage/EditPage";
-import PageWrapper from "./pages/PageWrapper/PageWrapper";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="font-sans ">
-      <EditPage />
+      <Router>
+        <AuthProvider>
+          <Routes>
+            <Route exact path="/" element={<EditPage />} />
+          </Routes>
+        </AuthProvider>
+      </Router>
     </div>
   );
 }
