@@ -1,8 +1,7 @@
-import NavBar from "../../components/Navigation/NavBar";
-import NavColumns from "../../components/Navigation/NavColumn";
+import NavBar from "../../components/navigation/NavBar";
+import NavColumns from "../../components/navigation/NavColumn";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import EditForm from "./EditForm";
-
 
 export default function EditPage() {
   return (
@@ -14,7 +13,7 @@ export default function EditPage() {
             <NavColumns />
           </div>
           <div className="grow">
-            <EditForm />
+           <EditForm/>
           </div>
         </div>
       </PageWrapper>

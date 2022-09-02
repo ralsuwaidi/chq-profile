@@ -1,6 +1,6 @@
 import "./App.css";
-import { AuthProvider } from "./components/Context/AuthProvider";
-import EditPage from "./pages/EditPage/EditPage";
+import { AuthProvider } from "./components/context/AuthProvider";
+import EditPage from "./pages/Edit";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
