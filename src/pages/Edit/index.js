@@ -8,11 +8,8 @@ export default function EditPage() {
     <div>
       <NavBar />
       <PageWrapper>
-        <div className="flex">
-          <div className="mr-12 mt-5">
-            <NavColumns />
-          </div>
-          <div className="grow">
+        <div className="">
+          <div className="">
            <EditForm/>
           </div>
         </div>
