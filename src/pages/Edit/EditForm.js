@@ -7,7 +7,6 @@ import FormMain from './FormMain'
 
 export default function EditForm() {
   let { editUser } = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
 
   return (
     <form onSubmit={editUser}>
