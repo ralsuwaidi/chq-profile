@@ -21,6 +21,7 @@ export const AuthProvider = (props) => {
 
   let navigate = useNavigate();
 
+  // get data 
   let editUser = async (e) => {
     e.preventDefault();
     console.log(">> ", e.target.firstName.value);

@@ -1,5 +1,5 @@
 import "./App.css";
-import { AuthProvider } from "./components/context/AuthProvider";
+import { AuthProvider } from "./context/AuthProvider";
 import EditPage from "./pages/Edit";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
