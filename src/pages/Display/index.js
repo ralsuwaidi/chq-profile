@@ -1,7 +1,10 @@
-import { useAsyncStuff } from "../../context/UserGet";
+import { useAxios } from "../../context/UserGet";
 
 export default function Display() {
-  const { data, error, loaded } = useAsyncStuff();
+  const { cancel, data, error, loaded } = useAxios(
+    "https://reqres.in/api/users/2",
+    "get"
+  );
 
   if (loaded) {
     return error ? (

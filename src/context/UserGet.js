@@ -1,17 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-
 // https://blog.openreplay.com/integrating-axios-with-react-hooks
 
-export const useAsyncStuff = () => {
+export const useAxios = (url, method, payload) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const controllerRef = useRef(new AbortController());
+
+  const cancel = () => {
+    controllerRef.current.abort();
+  };
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get("https://reqres.in/api/users/2");
+        const response = await axios.request({
+          data: payload,
+          signal: controllerRef.current.signal,
+          method,
+          url,
+        });
 
         setData(response.data);
       } catch (error) {
@@ -22,5 +31,5 @@ export const useAsyncStuff = () => {
     })();
   }, []);
 
-  return { data, error, loaded };
+  return { cancel, data, error, loaded };
 };
