@@ -2,8 +2,7 @@ import { Avatar, Button, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
 import EditRow from "./EditRow";
-import FormMain from './FormMain'
-
+import FormMain from "./FormMain";
 
 export default function EditForm() {
   let { editUser } = useContext(AuthContext);
@@ -14,21 +13,14 @@ export default function EditForm() {
         <FormMain />
 
         <EditRow label="Last Name">
-          <TextInput
-            id="lastName"
-            type="text"
-            placeholder="Suwaidi"
-          />
+          <TextInput id="lastName" type="text" placeholder="Suwaidi" />
         </EditRow>
 
-        
         <Button type="submit">Submit</Button>
       </div>
     </form>
   );
 }
-
-
 
 export function Header(props) {
   return (
