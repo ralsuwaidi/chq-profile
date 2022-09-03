@@ -1,15 +1,17 @@
-import { useState } from "react";
 import { useAsyncStuff } from "../../context/UserGet";
 
 export default function Display() {
-  let response = useAsyncStuff();
-  let user = null;
+  const { data, error, loaded } = useAsyncStuff();
 
-  if (response.loaded) {
-    user = response.data.data;
-    console.log(user.avatar)
+  if (loaded) {
+    return error ? (
+      <span>Error: {error}</span>
+    ) : (
+      <DisplayUser user={data.data} />
+    );
   }
-  return response.loaded ? <DisplayUser user={user} /> : <p>loading</p>;
+
+  return <span>Loading...</span>;
 }
 
 export function DisplayUser(props) {
