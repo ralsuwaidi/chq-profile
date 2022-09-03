@@ -2,7 +2,7 @@ import { useAxios } from "../../context/UserGet";
 
 export default function Display() {
   const { cancel, data, error, loaded } = useAxios(
-    "https://reqres.in/api/users/2",
+    "/users/8",
     "get"
   );
 
