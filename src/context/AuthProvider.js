@@ -55,9 +55,5 @@ export const AuthProvider = (props) => {
     editUser: editUser,
   };
 
-  return (
-    <AuthContext.Provider value={contextData}>
-      {props.children}
-    </AuthContext.Provider>
-  );
+
 };

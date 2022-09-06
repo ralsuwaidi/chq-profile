@@ -8,7 +8,7 @@ export const useAxios = (url, method, payload) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [loaded, setLoaded] = useState(false);
-  const contextInstance = useContext(AxiosContext);
+  const {contextInstance} = useContext(AxiosContext);
 
   const instance = useMemo(() => {
     return contextInstance || axios;
@@ -25,11 +25,8 @@ export const useAxios = (url, method, payload) => {
       try {
         const response = await instance.request({
           signal: controllerRef.current.signal,
-
           data: payload,
-
           method,
-
           url,
         });
 

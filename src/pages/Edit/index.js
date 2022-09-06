@@ -7,11 +7,7 @@ export default function EditPage() {
     <div>
       <NavBar />
       <PageWrapper>
-        <div className="">
-          <div className="">
            <EditForm/>
-          </div>
-        </div>
       </PageWrapper>
     </div>
   );

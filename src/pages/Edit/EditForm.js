@@ -1,15 +1,19 @@
 import { Avatar, Button, TextInput } from "flowbite-react";
-import React, { useContext } from "react";
-import AuthContext from "../../context/AuthProvider";
+import React, { useContext, useState } from "react";
+import { AxiosContext } from "../../context/UserContext";
 import EditRow from "./EditRow";
 import FormMain from "./FormMain";
 
 export default function EditForm() {
-  let { editUser } = useContext(AuthContext);
-
+  let { editUser } = useContext(AxiosContext);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState("");
+  const [loaded, setLoaded] = useState(false);
+  
   return (
     <form onSubmit={editUser}>
       <div className="mt-5">
+        {error}
         <FormMain />
 
         <EditRow label="Last Name">

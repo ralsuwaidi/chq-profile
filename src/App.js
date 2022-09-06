@@ -1,9 +1,9 @@
 import "./App.css";
-import { AuthProvider } from "./context/AuthProvider";
 import EditPage from "./pages/Edit";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Display from "./pages/Display";
 import { AxiosInstanceProvider } from "./context/UserContext";
+import AuthContext from "./context/AuthProvider";
 
 function App() {
   return (
